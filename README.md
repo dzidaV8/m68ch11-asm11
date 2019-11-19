@@ -6,6 +6,6 @@
 
 ### 0.0.1
 
-Initial release of M68HC11 Assembly (m68hc11-asm110).
+Initial release of M68HC11 Assembly (m68hc11-asm11).
 
 **Enjoy!**

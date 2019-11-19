@@ -4,7 +4,7 @@
 	"description": "Syntax Highlighting for 68HC11 Assembly (asm11)",
 	"version": "0.0.1",
 	"publisher": "dzidaV8",
-	"icon": "logo.png",
+	"icon": "",
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/dzidaV8/m68ch11-asm11"
@@ -38,7 +38,7 @@
 			{
 				"id": "m68hc11-asm11",
 				"aliases": [
-					"6800 Assembly (asm11)",
+					"68HC11 Assembly (asm11)",
 					"m68hc11-asm11"
 				],
 				"extensions": [
@@ -106,8 +106,8 @@
 		}
 	},
 	"__metadata": {
-		"id": "ceecd91b-989d-48c9-8d1d-e242a37686aa",
-		"publisherId": "2ef0a624-b4a6-4742-9bfe-0180fa8d078b",
+		"id": "dzidaV8.m68hc11-asm11",
+		"publisherId": "dzidaV8",
 		"publisherDisplayName": "dzidaV8"
 	}
 }

@@ -1,0 +1,113 @@
+{
+	"name": "m68hc11-asm11",
+	"displayName": "M68HC11 Assembly",
+	"description": "Syntax Highlighting for 68HC11 Assembly (asm11)",
+	"version": "0.0.1",
+	"publisher": "dzidaV8",
+	"icon": "logo.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dzidaV8/m68ch11-asm11"
+	},
+	"engines": {
+		"vscode": "^1.34.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"main": "./extension.js",
+	"activationEvents": [
+		"onCommand:m68hc11-asm11.asm11assemble"
+	],
+	"contributes": {
+		"keybindings": [
+			{
+				"command": "m68hc11-asm11.asm11assemble",
+				"key": "ctrl-shift-m",
+				"mac": "cmd-m",
+				"when": "editorTextFocus"
+			}
+		],
+		"commands": [
+			{
+				"command": "m68hc11-asm11.asm11assemble",
+				"title": "ASM11: Assemble"
+			}
+		],
+		"languages": [
+			{
+				"id": "m68hc11-asm11",
+				"aliases": [
+					"6800 Assembly (asm11)",
+					"m68hc11-asm11"
+				],
+				"extensions": [
+					".asm",
+					".s",
+					".list",
+					".out",
+					".lst"
+				],
+				"configuration": "./language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "m68hc11-asm11",
+				"scopeName": "source.m68hc11-asm11",
+				"path": "./syntaxes/m68hc11-asm11.tmLanguage.json"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "68HC11 Assembly Syntax Highlighting (asm11) configuration",
+			"properties": {
+				"m68hc11-asm11.As0Path": {
+					"type": "string",
+					"default": "/usr/local/bin",
+					"description": "asm11 path (/usr/local/bin, /c/cygwin64/usr/local/bin, etc.)"
+				},
+				"m68hc11-asm11.Listing": {
+					"type": "boolean",
+					"default": true,
+					"description": "asm11 listing option (-l)"
+				},
+				"m68hc11-asm11.ListingExtension": {
+					"type": "string",
+					"default": ".list",
+					"description": "asm11 listing output file extension (.list, .lst, .out, etc.)"
+				},
+				"m68hc11-asm11.NoListing": {
+					"type": "boolean",
+					"default": false,
+					"description": "asm11 no listing option (-nol)"
+				},
+				"m68hc11-asm11.CrossReference": {
+					"type": "boolean",
+					"default": true,
+					"description": "asm11 cross reference table option (-cre)"
+				},
+				"m68hc11-asm11.Symbol": {
+					"type": "boolean",
+					"default": true,
+					"description": "asm11 symbol table option (-s)"
+				},
+				"m68hc11-asm11.Cycle": {
+					"type": "boolean",
+					"default": false,
+					"description": "asm11 cycle count option (-c)"
+				},
+				"m68hc11-asm11.NoCycle": {
+					"type": "boolean",
+					"default": false,
+					"description": "asm11 no cycle count option (-noc)"
+				}
+			}
+		}
+	},
+	"__metadata": {
+		"id": "ceecd91b-989d-48c9-8d1d-e242a37686aa",
+		"publisherId": "2ef0a624-b4a6-4742-9bfe-0180fa8d078b",
+		"publisherDisplayName": "dzidaV8"
+	}
+}

@@ -1,0 +1,165 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Motorola 68HC11 Assembly Language",
+  "patterns": [
+    {
+      "include": "#opcodes"
+    },
+    {
+      "include": "#assemble-list"
+    },
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#directives"
+    },
+    {
+      "include": "#operands"
+    },
+    {
+      "include": "#strings-single"
+    }
+  ],
+  "repository": {
+    "opcodes": {
+      "patterns": [
+        {
+          "match": "\\b(?i)((asl|asr|lsr|rol|ror)([ab])?)\\b",
+          "name": "keyword.control.opcode.shift.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(?i)((add|and|adc|bit|eor|ora|sbc|sub|cmp|lda|sta|psh|pul)[ab])\\b",
+          "name": "keyword.control.opcode.ab.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(?i)((clr|com|dec|inc|neg|tst)([ab])?)\\b",
+          "name": "keyword.control.opcode.abmem.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(?i)((ld|cp|psh|pul|in|de|ab|st|ts|xgd)([xy])?)\\b",
+          "name": "keyword.control.opcode.xy.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(?i)(b[ceghlmnprsv][aceilqrsto])\\b",
+          "name": "keyword.control.opcode.branch.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(?i)(aba|cba|clc|cli|clv|daa|des|ins|jmp|jsr|lds|ldd|cpd|nop|rti|rts|sba|sec|sei|sev|sts|std|swi|tab|tap|tba|tpa|txs|wai|bclr|bset|brset|brclr)\\b",
+          "name": "keyword.control.opcode.misc.m68hc11-asm11"
+        }
+      ]
+    },
+    "assemble-list": {
+      "patterns": [
+        {
+          "match": "^ {5}(([0-9a-f]{2} )*[0-9a-f]{2})",
+          "name": "constant.numeric.list-fcb2.m68hc11-asm11"
+        },
+        {
+          "match": "^(?i)([0-9]* [0-9a-f]* ([0-9a-f]{2} )*)",
+          "name": "constant.numeric.list-assembly-code.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(?i)([0-9a-f]{4})\\b",
+          "name": "constant.numeric.list-xref.m68hc11-asm11"
+        }
+      ]
+    },
+    "comments": {
+      "patterns": [
+        {
+          "match": "^\\*.*$",
+          "name": "comment.line.asterisk.m68hc11-asm11"
+        },
+        {
+          "match": ";.*$",
+          "name": "comment.line.semicolon.m68hc11-asm11"
+        },
+        {
+          "match": " {8}\\*.*$",
+          "name": "comment.line.asterisk.assembly-list.m68hc11-asm11"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.m68hc11-asm11",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "match": "\\\\.",
+          "name": "constant.character.escape.m68hc11-asm11"
+        }
+      ]
+    },
+    "directives": {
+      "patterns": [
+        {
+          "match": "\\b(?i)(end|equ|opt|org|page)\\b",
+          "name": "keyword.control.directive.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(?i)(bsz|fcb|fcc|fdb|fill|rmb|zmb)\\b",
+          "name": "keyword.control.directive.data.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(&|%|\\^|\\*|\\/|\\-|\\+|\\|)",
+          "name": "keyword.function.operator.m68hc11-asm11"
+        }
+      ]
+    },
+    "operands": {
+      "patterns": [
+        {
+          "match": "'.'",
+          "name": "string.quoted.single.singlechar.m68hc11-asm11"
+        },
+        {
+          "match": "'.\\b",
+          "name": "string.quoted.single.onequote.m68hc11-asm11"
+        },
+        {
+          "match": "%[01]+",
+          "name": "constant.numeric.binary.m68hc11-asm11"
+        },
+        {
+          "match": "@[0-7]+",
+          "name": "constant.numeric.octal.m68hc11-asm11"
+        },
+        {
+          "match": "\\b[0-9]+\\b",
+          "name": "constant.numeric.decimal.m68hc11-asm11"
+        },
+        {
+          "match": "(\\$|\\b0x)[A-Fa-f0-9]+\\b",
+          "name": "constant.numeric.hex.m68hc11-asm11"
+        },
+        {
+          "match": "(?i)(,x)\\b",
+          "name": "keyword.operand.indexed.m68hc11-asm11"
+        },
+        {
+          "match": "\\b[\\s\\t]+\\#",
+          "name": "keyword.operand.immediate.m68hc11-asm11"
+        },
+        {
+          "match": "'(;|\\[|\\]|\\$|@|#|!| |%|\\+|\\^|\\&|\\*|\\(|\\)|\\{|\\}|\\\\|\\||\\\"|\\-|\\=|\\,|\\:|\\'|\\<|\\>|\\.|\\?|\\/|\\~|\\`)",
+          "name": "string.quoted.single.symbol.m68hc11-asm11"
+        }
+      ]
+    },
+    "strings-single": {
+      "patterns": [
+        {
+          "match": "('[^']*')",
+          "name": "string.quoted.single.m68hc11-asm11"
+        }
+      ]
+    }
+  },
+  "scopeName": "source.m68hc11-asm11"
+}

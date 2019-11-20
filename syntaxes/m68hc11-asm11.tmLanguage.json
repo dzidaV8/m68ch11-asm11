@@ -28,8 +28,12 @@
     "opcodes": {
       "patterns": [
         {
-          "match": "\\b(?i)((asl|asr|lsr|rol|ror)([ab])?)\\b",
+          "match": "\\b(?i)((asl|asr|lsr|lsl|rol|ror)([ab])?)\\b",
           "name": "keyword.control.opcode.shift.m68hc11-asm11"
+        },
+        {
+          "match": "\\b(?i)((asld|lsrd|lsld))\\b",
+          "name": "keyword.control.opcode.shiftd.m68hc11-asm11"
         },
         {
           "match": "\\b(?i)((add|and|adc|bit|eor|ora|sbc|sub|cmp|lda|sta|psh|pul)[ab])\\b",

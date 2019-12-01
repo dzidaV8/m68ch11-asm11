@@ -52,7 +52,7 @@
           "name": "keyword.control.opcode.branch.m68hc11-asm11"
         },
         {
-          "match": "\\b(?i)(aba|addd|subd|cba|clc|cli|clv|daa|des|ins|jmp|jsr|lds|ldd|cpd|nop|rti|rts|sba|sec|sei|sev|sts|std|swi|tab|tap|tba|tpa|txs|wai|bclr|bset|brset|brclr)\\b",
+          "match": "\\b(?i)(aba|addd|subd|cba|clc|cli|clv|daa|des|ins|jmp|jsr|lds|ldd|cpd|nop|rti|rts|sba|sec|sei|sev|sts|std|swi|mul|fdiv|idiv|tab|tap|tba|tpa|txs|wai|bclr|bset|brset|brclr)\\b",
           "name": "keyword.control.opcode.misc.m68hc11-asm11"
         }
       ]
